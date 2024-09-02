@@ -35,6 +35,7 @@ int main() {
     // Calculate and display the mean, median, and mode for the frequency distribution
     printf("Mean: %.2f\n", mean_freq(obs, freq, n));
     printf("Median: %.2f\n", median_freq(obs, freq, n));
+    printf("Mode: %.2f\n", mode_freq(obs, freq, n));
     
 
     // Free the dynamically allocated memory

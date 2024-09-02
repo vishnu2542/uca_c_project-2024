@@ -45,4 +45,19 @@ double median_freq(double obs[], int freq[], int n) {
     return -1; // Should not reach here
 }
 
+// Function to calculate mode for ungrouped frequency distribution
+double mode_freq(double obs[], int freq[], int n) {
+    int max_freq = freq[0];
+    double mode_value = obs[0];
+
+    for (int i = 1; i < n; i++) {
+        if (freq[i] > max_freq) {
+            max_freq = freq[i];
+            mode_value = obs[i];
+        }
+    }
+
+    return mode_value;
+}
+
 
