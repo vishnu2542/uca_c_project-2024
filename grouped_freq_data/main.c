@@ -28,6 +28,10 @@ int main() {
     double calculated_mean = mean_grouped(lower, upper, frequencies, n);
     printf("\nCalculated Mean: %.2f\n", calculated_mean);
 
+    // Calculate and print the median
+    double calculated_median = median_grouped(lower, upper, frequencies, n);
+    printf("Calculated Median: %.2f\n", calculated_median);
+
     // Free allocated memory
     free(lower);
     free(upper);
