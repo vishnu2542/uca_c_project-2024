@@ -31,6 +31,10 @@ int main() {
     // Calculate and print the median
     double calculated_median = median_grouped(lower, upper, frequencies, n);
     printf("Calculated Median: %.2f\n", calculated_median);
+    
+    // Calculate and print the mode
+    double calculated_mode = mode_grouped(lower, upper, frequencies, n);
+    printf("Calculated Mode: %.2f\n", calculated_mode);
 
     // Free allocated memory
     free(lower);
