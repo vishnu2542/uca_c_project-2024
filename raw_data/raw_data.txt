@@ -1,0 +1,10 @@
+Data Points
+-----------
+1.00
+1.00
+3.00
+4.00
+
+Calculated Mean: 2.25
+Calculated Median: 2.00
+Calculated Mode: 1.00
