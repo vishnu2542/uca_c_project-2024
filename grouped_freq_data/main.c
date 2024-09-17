@@ -4,24 +4,44 @@
 
 int main() {
     int n;
-    
-    // Get the number of classes from the user
+
+    // Get the number of class intervals from the user with input validation for a positive integer
     printf("Enter the number of class intervals: ");
-    scanf("%d", &n);
+    while (scanf("%d", &n) != 1 || n <= 0) {
+        printf("Invalid entry. Please enter a valid positive integer for the number of class intervals: ");
+        while (getchar() != '\n'); // Clear the input buffer
+    }
 
     // Dynamically allocate memory for arrays
     double *lower = (double *)malloc(n * sizeof(double));
     double *upper = (double *)malloc(n * sizeof(double));
     int *frequencies = (int *)malloc(n * sizeof(int));
 
-    // Get the class intervals and frequencies from the user
+    // Check if memory allocation was successful
+    if (lower == NULL || upper == NULL || frequencies == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+
+    // Get the class intervals and frequencies from the user with input validation
     for (int i = 0; i < n; i++) {
         printf("Enter lower boundary of class interval %d: ", i + 1);
-        scanf("%lf", &lower[i]);
+        while (scanf("%lf", &lower[i]) != 1) {
+            printf("Invalid entry. Please enter a valid number for the lower boundary of class interval %d: ", i + 1);
+            while (getchar() != '\n'); // Clear the input buffer
+        }
+
         printf("Enter upper boundary of class interval %d: ", i + 1);
-        scanf("%lf", &upper[i]);
+        while (scanf("%lf", &upper[i]) != 1) {
+            printf("Invalid entry. Please enter a valid number for the upper boundary of class interval %d: ", i + 1);
+            while (getchar() != '\n'); // Clear the input buffer
+        }
+
         printf("Enter frequency of class interval %d: ", i + 1);
-        scanf("%d", &frequencies[i]);
+        while (scanf("%d", &frequencies[i]) != 1 || frequencies[i] < 0) {
+            printf("Invalid entry. Please enter a valid positive integer for the frequency of class interval %d: ", i + 1);
+            while (getchar() != '\n'); // Clear the input buffer
+        }
     }
 
     // Calculate and print the mean
